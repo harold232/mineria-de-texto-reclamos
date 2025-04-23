@@ -4,7 +4,7 @@ import pandas as pd
 from faker import Faker
 
 # Cargar el DataFrame
-df = pd.read_csv("../data/processed/reclamos_clean_transformed.csv", encoding="utf-8")
+df = pd.read_csv("./data/processed/reclamos_clean.csv", encoding="utf-8")
 
 # Crear una instancia de Faker
 fake = Faker("es_ES")
@@ -16,7 +16,76 @@ templates = {
         "Mi solicitud para recibir tratamiento médico fue demorada sin una justificación clara.",
         "La aseguradora no ha proporcionado respuesta respecto a mi solicitud de cobertura.",
         "Después de varios intentos, la cobertura médica no fue otorgada a tiempo.",
-        "Me han informado que no tengo derecho a cobertura en el tratamiento solicitado."
+        "Me han informado que no tengo derecho a cobertura en el tratamiento solicitado.",
+        "La aseguradora rechazó mi solicitud de cobertura sin explicar el motivo.",
+        "El proceso para obtener cobertura médica ha sido excesivamente lento.",
+        "No he recibido ninguna respuesta sobre mi solicitud de cobertura médica.",
+        "Mi tratamiento fue pospuesto debido a la falta de aprobación del seguro.",
+        "El seguro no autorizó el procedimiento médico necesario para mi salud.",
+        "La aseguradora no cumplió con los plazos establecidos para responder mi solicitud.",
+        "Mi cobertura médica fue cancelada sin previo aviso ni explicación.",
+        "El seguro no cubrió los costos de mi tratamiento a pesar de estar incluido en la póliza.",
+        "La demora en la aprobación de mi cobertura médica ha afectado mi salud.",
+        "No se me ha permitido acceder a los servicios médicos que necesito.",
+        "La aseguradora no ha cumplido con su obligación de cubrir mi tratamiento.",
+        "Mi solicitud de cobertura fue rechazada sin una razón válida.",
+        "El seguro no respondió a mis múltiples intentos de comunicación.",
+        "La falta de cobertura médica ha puesto en riesgo mi bienestar.",
+        "El seguro no aprobó el medicamento que necesito para mi tratamiento.",
+        "La aseguradora no ha procesado mi solicitud de cobertura en el tiempo prometido.",
+        "Mi tratamiento fue interrumpido debido a la negativa del seguro.",
+        "El seguro no cubrió los gastos médicos a pesar de cumplir con los requisitos.",
+        "La aseguradora no ha dado seguimiento a mi caso de cobertura médica.",
+        "El retraso en la aprobación de mi cobertura ha generado complicaciones médicas.",
+        "Mi solicitud de cobertura fue ignorada por completo por la aseguradora.",
+        "El seguro no autorizó la cirugía que necesito para mi recuperación.",
+        "La aseguradora no ha cumplido con los términos establecidos en mi póliza.",
+        "El seguro no cubrió los exámenes médicos necesarios para mi diagnóstico.",
+        "La demora en la respuesta del seguro ha afectado mi tratamiento médico.",
+        "El seguro no aprobó la terapia que necesito para mi rehabilitación.",
+        "La aseguradora no ha proporcionado una solución a mi problema de cobertura.",
+        "Mi solicitud de cobertura fue rechazada sin previo aviso ni explicación.",
+        "El seguro no cubrió los costos de hospitalización a pesar de estar en la póliza.",
+        "La falta de respuesta del seguro ha generado estrés y preocupación.",
+        "El seguro no autorizó el procedimiento médico urgente que necesito.",
+        "La aseguradora no ha cumplido con los plazos establecidos en mi contrato.",
+        "El retraso en la cobertura médica ha empeorado mi condición de salud.",
+        "El seguro no cubrió los medicamentos recetados por mi médico tratante.",
+        "La aseguradora me hizo dar vueltas durante semanas y aún no tengo respuesta.",
+        "El seguro me pidió documentos adicionales que ya había enviado previamente.",
+        "Me dijeron que mi caso estaba en revisión, pero han pasado meses sin noticias.",
+        "El seguro argumentó que mi tratamiento no era necesario, a pesar de la recomendación médica.",
+        "La aseguradora cambió las condiciones de mi póliza sin avisarme y ahora no cubren mi tratamiento.",
+        "El seguro me dejó esperando en una situación crítica y no ofreció ninguna solución.",
+        "Me rechazaron la cobertura porque supuestamente no cumplía con un requisito que nunca mencionaron antes.",
+        "La aseguradora me transfirió de un departamento a otro sin resolver mi problema.",
+        "El seguro alegó que mi tratamiento era experimental, aunque está aprobado por las autoridades de salud.",
+        "La falta de cobertura me obligó a endeudarme para pagar mi tratamiento urgente.",
+        "El seguro no reconoció los recibos de gastos médicos que presenté, a pesar de ser válidos.",
+        "La aseguradora me dijo que mi póliza había expirado, aunque seguí pagando las cuotas a tiempo.",
+        "El seguro no cubrió mi tratamiento porque dijeron que no estaba en su red de proveedores, aunque sí lo estaba.",
+        "La aseguradora me dejó sin opciones en un momento crítico para mi salud.",
+        "El seguro me pidió esperar más tiempo, pero mi condición médica no puede esperar.",
+        "La aseguradora no respetó el diagnóstico de mi médico tratante y negó la cobertura.",
+        "A pesar de haber cumplido con todos los requisitos, el seguro sigue sin aprobar mi tratamiento, lo que me ha generado una gran incertidumbre.",
+        "El seguro me indicó que debía esperar una respuesta en un plazo de 15 días, pero ya han pasado meses y no tengo noticias.",
+        "La aseguradora me solicitó documentos adicionales en varias ocasiones, pero cada vez que los envío, me piden algo diferente.",
+        "El seguro argumentó que mi tratamiento no estaba cubierto porque no era considerado esencial, a pesar de que mi médico lo recomendó como urgente.",
+        "La aseguradora me informó que mi solicitud de cobertura fue rechazada porque no cumplía con un requisito que nunca fue mencionado en mi póliza.",
+        "El retraso en la aprobación de mi cobertura médica ha hecho que mi condición de salud empeore considerablemente, y no sé qué más hacer.",
+        "El seguro me indicó que mi caso estaba siendo revisado por un comité, pero no me han dado ninguna actualización en meses.",
+        "La aseguradora cambió las condiciones de mi póliza sin previo aviso, y ahora me dicen que mi tratamiento no está cubierto bajo las nuevas reglas.",
+        "El seguro me dejó esperando en una situación crítica, y cuando finalmente respondieron, solo me ofrecieron una solución parcial que no cubre mis necesidades.",
+        "Me rechazaron la cobertura porque supuestamente no cumplía con un requisito que nunca fue mencionado en mi contrato inicial.",
+        "La aseguradora me transfirió de un departamento a otro durante semanas, y al final, nadie pudo darme una respuesta clara sobre mi caso.",
+        "El seguro alegó que mi tratamiento era experimental, aunque está aprobado por las autoridades de salud y es ampliamente utilizado en otros casos similares.",
+        "La falta de cobertura me obligó a endeudarme para pagar mi tratamiento urgente, lo que ha afectado gravemente mi situación financiera.",
+        "El seguro no reconoció los recibos de gastos médicos que presenté, a pesar de que cumplían con todos los requisitos establecidos en mi póliza.",
+        "La aseguradora me dijo que mi póliza había expirado, aunque seguí pagando las cuotas a tiempo y tengo los comprobantes de pago.",
+        "El seguro no cubrió mi tratamiento porque dijeron que no estaba en su red de proveedores, aunque mi médico tratante sí está registrado en su sistema.",
+        "La aseguradora me dejó sin opciones en un momento crítico para mi salud, y no me ofrecieron ninguna alternativa viable para continuar mi tratamiento.",
+        "El seguro me pidió esperar más tiempo para procesar mi solicitud, pero mi condición médica no puede esperar y cada día que pasa es crucial.",
+        "La aseguradora no respetó el diagnóstico de mi médico tratante y negó la cobertura, argumentando que no era necesario, lo que contradice la opinión profesional."
     ],
     "Cobrar indebidamente": [
         "Se me ha cobrado un monto adicional por un servicio que no he solicitado.",
@@ -24,11 +93,51 @@ templates = {
         "Recibí un cobro indebido en mi factura de atención médica.",
         "Me cobraron por un servicio que ya había sido cubierto por mi seguro.",
         "Mi cuenta muestra un cargo no autorizado relacionado con el servicio de salud.",
-        "me cobró por una cirugía de emergencia que, como asegurado, debería estar cubierta.",
+        "Me cobró por una cirugía de emergencia que, como asegurado, debería estar cubierta.",
         "La farmacia de EsSalud me exigió pagar por medicamentos para mi hijo, pese a presentar su carné de asegurado.",
         "Me facturaron insumos médicos (gasas, jeringas) en una atención de emergencia que deberían ser gratuitos.",
         "El área de laboratorio cobró por unos análisis que el médico ordenó como parte de mi tratamiento cubierto.",
-        "En el tópico de mi policlínico, me pidieron un pago voluntario para agilizar mi atención."
+        "En el tópico de mi policlínico, me pidieron un pago voluntario para agilizar mi atención.",
+        "En mi última consulta, me cobraron por un procedimiento que el médico indicó como parte del tratamiento regular cubierto por mi seguro.",
+        "El hospital me facturó un monto adicional por el uso de una sala de espera, lo cual nunca había ocurrido antes.",
+        "Me exigieron un pago extra para poder acceder a los resultados de mis análisis clínicos, a pesar de que ya estaban incluidos en mi plan de salud.",
+        "El personal administrativo me indicó que debía pagar por un certificado médico que debería ser gratuito según las políticas del hospital.",
+        "En la farmacia del hospital, me cobraron por un medicamento genérico que debería estar incluido en el programa de atención gratuita.",
+        "El centro de salud me cobró por una consulta de seguimiento que, según mi contrato, no debería tener costo adicional.",
+        "Me solicitaron un pago por el uso de una silla de ruedas durante mi estancia en el hospital, algo que nunca se me informó previamente.",
+        "El área de radiología me cobró por unas placas adicionales que el médico no había solicitado y que no eran necesarias para mi diagnóstico.",
+        "En el área de emergencias, me pidieron un pago por el uso de una camilla, lo cual considero un cobro indebido.",
+        "El hospital me facturó un monto por concepto de 'gastos administrativos' que no estaba especificado en ningún documento.",
+        "Me cobraron por una consulta médica que estaba programada como parte de un control preventivo gratuito.",
+        "El centro de salud me exigió un pago para poder acceder a mi historial clínico, a pesar de que debería ser gratuito.",
+        "Me cobraron por un examen de laboratorio que estaba incluido en mi plan de salud integral.",
+        "El hospital me solicitó un pago adicional por el uso de un equipo médico que debería estar cubierto por mi seguro.",
+        "El personal de recepción me indicó que debía pagar por un formulario de autorización que debería ser gratuito.",
+        "Me cobraron por una vacuna que estaba incluida en el programa de inmunización gratuita del gobierno.",
+        "El área de fisioterapia me exigió un pago por sesiones que estaban contempladas en mi tratamiento cubierto.",
+        "El hospital me cobró por un traslado en ambulancia que debería estar incluido en mi cobertura de emergencia.",
+        "Me solicitaron un pago por el uso de una habitación compartida, a pesar de que mi seguro cubre este tipo de alojamiento.",
+        "El centro de salud me cobró por un procedimiento que el médico indicó como parte de un tratamiento preventivo gratuito.",
+        "En mi última visita al hospital, me cobraron por un servicio de consulta rápida que nunca solicité y que no estaba en mi plan.",
+        "El hospital me pidió un pago adicional por el uso de un monitor cardíaco durante mi tratamiento, a pesar de que mi seguro lo cubre.",
+        "Me exigieron un pago por el acceso a los resultados de una resonancia magnética que ya estaba incluida en mi cobertura.",
+        "El personal del hospital me indicó que debía pagar por un informe médico detallado, aunque mi seguro incluye este servicio sin costo.",
+        "En la farmacia del hospital, me cobraron por un medicamento de marca cuando el genérico estaba cubierto por mi plan de salud.",
+        "El centro de salud me solicitó un pago por una consulta de emergencia que, según mi contrato, debería ser gratuita.",
+        "Me cobraron por un procedimiento odontológico que estaba incluido en mi plan de salud integral y no debería tener costo adicional.",
+        "El hospital me facturó un monto por el uso de un equipo de oxígeno portátil, a pesar de que mi seguro lo cubre completamente.",
+        "Me pidieron un pago por el acceso a una sala de recuperación después de mi cirugía, algo que nunca se me informó previamente.",
+        "El área de pediatría del hospital me cobró por una consulta de control para mi hijo que estaba programada como gratuita.",
+        "El hospital me exigió un pago por el uso de un equipo de ultrasonido durante mi consulta, a pesar de que mi seguro lo incluye.",
+        "Me cobraron por un examen de sangre que el médico indicó como parte de un chequeo preventivo gratuito.",
+        "El centro de salud me solicitó un pago por el uso de una incubadora para mi bebé, a pesar de que mi seguro cubre este servicio.",
+        "El hospital me facturó un monto adicional por el uso de un quirófano, aunque mi seguro cubre completamente este tipo de procedimientos.",
+        "Me cobraron por un servicio de teleconsulta que estaba incluido en mi plan de salud.",
+        "El hospital me exigió un pago por el uso de un equipo de monitoreo fetal durante mi consulta prenatal.",
+        "Me solicitaron un pago adicional por el acceso a un informe de alta médica que debería ser gratuito.",
+        "El centro de salud me cobró por un procedimiento de vacunación que estaba incluido en el programa nacional de inmunización.",
+        "El hospital me facturó un monto por el uso de un equipo de nebulización que debería estar cubierto por mi seguro.",
+        "Me pidieron un pago por el acceso a una consulta virtual que estaba incluida en mi cobertura de salud."
     ],
     "Otros relativos a las IAFAS": [
         "Tengo inconvenientes con la administración de mi servicio de IAFAS.",
@@ -84,11 +193,11 @@ templates = {
         "Intenté acreditar mi estatus de usuario asegurado, pero se me negó el acceso.",
         "La acreditación de mi usuario fue rechazada sin justificación alguna.",
         "No he podido obtener la acreditación de usuario asegurado, a pesar de cumplir con los requisitos.",
-        "Rechazaron mi carné de asegurado porque ‘falta un documento’, pese a que lo presenté.",
+        "Rechazaron mi carné de asegurado porque falta un documento, pese a que lo presenté.",
         "No reconocen mi derecho como familiar beneficiario, aunque cumplo con los requisitos.",
         "Me exigen trámites adicionales no establecidos en la normativa para acreditarme.",
         "El sistema no registra mi afiliación activa, pese a que mi empleador declara mis aportes.",
-        "No puedo acceder a servicios porque mi carné ‘no aparece en el sistema’."
+        "No puedo acceder a servicios porque mi carné no aparece en el sistema."
     ],
     "Negar o demorar en la atención en la IAFAS": [
         "La atención médica en la IAFAS fue extremadamente demorada.",
@@ -100,7 +209,67 @@ templates = {
         "Cancelaron mi cita programada de oncología sin aviso previo.",
         "No hay médicos en el tópico de mi policlínico, pese a ser horario de atención.",
         "Mi cirugía fue postergada 4 veces por falta de quirófanos disponibles.",
-        "No me atienden en el servicio de psicología, siempre dicen no hay cupos."
+        "No me atienden en el servicio de psicología, siempre dicen no hay cupos.",
+        "El personal de la IAFAS no me permitió programar una cita médica.",
+        "Mi tratamiento fue interrumpido debido a la falta de medicamentos en la IAFAS.",
+        "No hay especialistas disponibles para atender mi caso en la IAFAS.",
+        "La línea de atención al cliente de la IAFAS nunca responde mis llamadas.",
+        "Mi solicitud de atención domiciliaria fue rechazada sin explicación.",
+        "El laboratorio de la IAFAS no procesó mis análisis en el tiempo prometido.",
+        "Me reprogramaron la cita médica varias veces sin previo aviso.",
+        "El servicio de urgencias de la IAFAS no cuenta con personal suficiente.",
+        "No me entregaron los resultados de mis exámenes en la fecha indicada.",
+        "La atención en el área de pediatría fue extremadamente lenta y desorganizada.",
+        "Solicité una consulta médica hace semanas y aún no me han asignado una fecha.",
+        "El personal administrativo de la IAFAS no me brindó información clara sobre mi caso.",
+        "Tuve que acudir a una clínica privada porque la IAFAS no resolvió mi emergencia a tiempo.",
+        "Mi hijo necesitaba atención urgente y en la IAFAS nos hicieron esperar más de 5 horas.",
+        "La falta de coordinación entre las áreas de la IAFAS retrasó mi tratamiento por meses.",
+        "A pesar de tener una cita programada, me hicieron esperar toda la mañana sin ser atendido.",
+        "El médico que debía atenderme no se presentó y nadie me dio una solución en la IAFAS.",
+        "La farmacia de la IAFAS no tenía los medicamentos que me recetaron y no ofrecieron alternativas.",
+        "Mi madre, que es una persona mayor, no recibió la atención prioritaria que necesitaba en la IAFAS.",
+        "El sistema de citas en línea de la IAFAS no funciona correctamente y no pude agendar mi consulta.",
+        "Me derivaron a otro hospital sin explicarme por qué no podían atenderme en el lugar inicial.",
+        "El personal de la IAFAS fue descortés y no mostró interés en resolver mi problema de salud.",
+        "Tuve que presentar múltiples reclamos para que finalmente me programaran una cirugía urgente.",
+        "La demora en la atención de la IAFAS agravó mi condición médica, poniendo en riesgo mi salud.",
+        "A pesar de ser afiliado, me dijeron que no podían atenderme porque no había presupuesto disponible.",
+        "El área de emergencias estaba saturada y no había camillas ni espacio para atender a los pacientes.",
+        "Mi solicitud de traslado en ambulancia fue ignorada, a pesar de la gravedad de mi situación.",
+        "El médico que me atendió no revisó mi historial clínico y me dio un diagnóstico incorrecto.",
+        "La falta de personal en la IAFAS hizo que mi consulta médica fuera reprogramada sin previo aviso.",
+        "Después de esperar más de 4 horas en la sala de emergencias, me informaron que no había médicos disponibles para atenderme.",
+        "Solicité una cita con un especialista hace más de un mes y aún no he recibido ninguna respuesta por parte de la IAFAS.",
+        "El personal de la IAFAS me indicó que debía regresar otro día porque no tenían acceso a mi historial médico.",
+        "A pesar de haber llegado temprano a mi cita programada, me hicieron esperar hasta el final del día sin explicaciones.",
+        "El sistema de atención telefónica de la IAFAS me mantuvo en espera por más de una hora y al final cortaron la llamada.",
+        "Mi hijo necesitaba atención pediátrica urgente, pero en la IAFAS nos dijeron que no había cupos disponibles hasta la próxima semana.",
+        "El médico que me atendió en la IAFAS no realizó un examen completo y me recetó un tratamiento que no solucionó mi problema.",
+        "Tuve que trasladarme a otro distrito porque el hospital asignado por la IAFAS no contaba con los equipos necesarios para mi tratamiento.",
+        "La falta de coordinación entre los departamentos de la IAFAS hizo que mi trámite de autorización se retrasara por semanas.",
+        "El personal de recepción en la IAFAS fue muy descortés y no me brindó la orientación necesaria para resolver mi caso.",
+        "A pesar de tener una orden médica de urgencia, me dijeron que debía esperar varios días para ser atendido.",
+        "El área de farmacia de la IAFAS no tenía los medicamentos básicos y me indicaron que debía comprarlos por mi cuenta.",
+        "Mi madre, que tiene una condición crónica, no recibió la atención adecuada porque el especialista no estaba disponible.",
+        "El servicio de ambulancias de la IAFAS tardó más de 3 horas en llegar, poniendo en riesgo la vida de mi familiar.",
+        "El médico que debía realizar mi cirugía no se presentó y nadie me dio una solución o una nueva fecha para el procedimiento.",
+        "La atención en el área de emergencias fue tan lenta que decidí retirarme y buscar ayuda en una clínica privada.",
+        "A pesar de haber presentado todos los documentos requeridos, mi solicitud de atención fue rechazada sin justificación.",
+        "El laboratorio de la IAFAS perdió mis muestras de análisis y tuve que repetir todo el proceso desde el inicio.",
+        "El personal de la IAFAS no me informó que mi cita había sido cancelada y me hicieron ir al hospital en vano.",
+        "La demora en la entrega de mis resultados médicos me impidió iniciar el tratamiento a tiempo, afectando mi salud.",
+        "El médico especialista que debía atenderme no estaba disponible y me reprogramaron la cita sin consultarme.",
+        "El área de radiología de la IAFAS no tenía los equipos necesarios para realizar mis exámenes.",
+        "El personal de la IAFAS me trató de manera indiferente y no resolvió mi problema de salud.",
+        "Tuve que esperar más de 6 horas en la sala de espera para ser atendido por un médico general.",
+        "El sistema de citas de la IAFAS no me permitió agendar una consulta con el especialista que necesito.",
+        "A pesar de tener una emergencia, me dijeron que debía esperar hasta el día siguiente para ser atendido.",
+        "El hospital asignado por la IAFAS no contaba con los insumos necesarios para realizar mi tratamiento.",
+        "El médico que me atendió no me explicó claramente mi diagnóstico ni el tratamiento a seguir.",
+        "El personal de la IAFAS perdió mi expediente médico y tuve que iniciar todo el proceso nuevamente.",
+        "La demora en la autorización de mi tratamiento por parte de la IAFAS empeoró mi condición médica.",
+        "El área de atención al cliente de la IAFAS no resolvió mi reclamo y me indicaron que debía presentar una queja formal."
     ],
     "No brindar atención con respeto de parte del personal de la IAFAS": [
         "El personal de la IAFAS no me brindó la atención que esperaba y fue grosero.",
@@ -109,7 +278,7 @@ templates = {
         "Tuve una mala experiencia con el trato del personal en la IAFAS, no fui respetado.",
         "El trato que recibí en la IAFAS fue inapropiado y poco respetuoso.",
         "El médico me trató con grosería cuando pregunté por mi diagnóstico.",
-        "La enfermera se negó a atenderme porque ‘ya era hora de salir’.",
+        "La enfermera se negó a atenderme porque ya era hora de salir.",
         "El personal administrativo me gritó cuando reclamé por la demora en mi trámite.",
         "Se burlaron de mi condición de discapacidad al solicitar atención preferencial.",
         "El recepcionista me ignoró deliberadamente durante 20 minutos."
@@ -124,7 +293,52 @@ templates = {
         "No responden a mi solicitud de reembolso por atención de emergencia en otra región.",
         "Perdí mi cita con el especialista porque no emitieron la carta a tiempo.",
         "El trámite de reembolso por medicamentos lleva más de 90 días.",
-        "No hay información sobre el estado de mi carta de garantía, pese a reclamos."
+        "No hay información sobre el estado de mi carta de garantía, pese a reclamos.",
+        "He llamado varias veces y no me dan una respuesta clara sobre mi reembolso.",
+        "Es frustrante que algo tan importante como mi carta de garantía tarde tanto.",
+        "Me siento desatendido porque no hay avances en mi solicitud de reembolso.",
+        "Han pasado semanas y sigo sin recibir noticias sobre mi trámite.",
+        "Cada vez que pregunto, me dicen que espere más tiempo, pero no hay solución.",
+        "No entiendo por qué un trámite tan sencillo se está complicando tanto.",
+        "Mi salud depende de esta carta y no puedo seguir esperando indefinidamente.",
+        "El proceso de reembolso parece estar completamente detenido sin razón aparente.",
+        "Me prometieron una respuesta rápida, pero ya llevo meses esperando.",
+        "Es inaceptable que algo tan urgente como mi carta de garantía no se priorice.",
+        "Llamo y me dicen que están revisando, pero nunca hay avances concretos.",
+        "Es desesperante no tener claridad sobre cuándo recibiré mi reembolso.",
+        "Parece que mi caso está olvidado, nadie me da una solución.",
+        "No entiendo por qué no hay un proceso más ágil para estos trámites.",
+        "Cada vez que intento comunicarme, me pasan de un área a otra sin resolver nada.",
+        "Estoy perdiendo la confianza en el sistema por la falta de respuesta.",
+        "No puedo seguir esperando, necesito una solución inmediata.",
+        "Es increíble que algo tan básico como una carta de garantía tome tanto tiempo.",
+        "Me siento ignorado, nadie parece tomar en serio mi situación.",
+        "He cumplido con todos los requisitos, pero aún así no hay avances.",
+        "No es justo que tenga que estar insistiendo tanto para algo que debería ser rápido.",
+        "La falta de comunicación y claridad en el proceso es muy frustrante.",
+        "No puedo seguir posponiendo mi tratamiento por la demora en este trámite.",
+        "Es agotador tener que estar detrás de ustedes para obtener una respuesta.",
+        "Siento que no valoran la urgencia de mi situación.",
+        "He enviado correos, he llamado, y aún así no hay solución.",
+        "No entiendo por qué no hay un plazo claro para resolver mi caso.",
+        "Es muy decepcionante el nivel de atención que estoy recibiendo.",
+        "Necesito que alguien se haga responsable y me dé una respuesta concreta.",
+        "No puedo seguir esperando indefinidamente, esto afecta mi salud y bienestar.",
+        "Llevo semanas intentando que alguien me explique por qué mi trámite está detenido, pero nadie me da una respuesta clara. Es frustrante no saber qué está pasando.",
+        "He cumplido con todos los pasos que me pidieron, entregué los documentos a tiempo, pero aún así no hay avances. ¿Qué más se supone que debo hacer?",
+        "Es increíble que algo tan importante como mi reembolso esté siendo tratado con tanta indiferencia. Esto no solo afecta mi economía, sino también mi confianza en el sistema.",
+        "Cada vez que llamo me dicen que mi caso está en revisión, pero nunca hay una fecha concreta ni un compromiso real. ¿Cuánto más tengo que esperar?",
+        "No entiendo cómo pueden tardar tanto en gestionar algo que debería ser prioritario. Mi salud y bienestar dependen de esta carta de garantía, y no puedo seguir esperando.",
+        "He perdido horas de mi tiempo llamando, enviando correos y haciendo seguimiento, pero parece que nadie está realmente interesado en resolver mi caso.",
+        "Es muy frustrante que cada vez que intento obtener información, me den respuestas vagas o me transfieran de un área a otra sin resolver nada.",
+        "No puedo creer que después de tantos meses aún no tenga una solución. Esto está afectando mi vida diaria y mi tranquilidad de una manera que no debería suceder.",
+        "Me dijeron que el trámite tomaría unas semanas, pero ya han pasado meses y sigo sin recibir noticias. ¿Por qué no hay un compromiso claro con los tiempos?",
+        "Es desesperante sentir que mi caso no es una prioridad para ustedes. Estoy hablando de algo que afecta directamente mi salud y mi calidad de vida.",
+        "He intentado ser paciente, pero ya no puedo seguir esperando. Necesito una solución inmediata, no más excusas ni demoras injustificadas.",
+        "No entiendo cómo pueden justificar tanta demora en un trámite que debería ser sencillo. Esto solo demuestra una falta de organización y compromiso con los usuarios.",
+        "Cada vez que intento obtener información, me encuentro con respuestas contradictorias. Es como si nadie supiera realmente qué está pasando con mi caso.",
+        "Es inaceptable que tenga que estar insistiendo constantemente para algo que debería ser un derecho básico. Esto no es un favor, es una obligación de su parte.",
+        "Estoy agotado de tener que luchar tanto por algo que debería ser un proceso simple y transparente. Esto está afectando mi confianza en el sistema por completo."
     ],
     "Negar la cobertura en periodo de latencia": [
         "Mi cobertura fue negada durante el periodo de latencia sin justificación.",
@@ -133,7 +347,7 @@ templates = {
         "La cobertura de mi tratamiento fue rechazada durante el periodo de latencia.",
         "Mi solicitud de cobertura fue rechazada debido al periodo de latencia.",
         "Se negaron a cubrir mi tratamiento de hemodiálisis por estar en periodo de latencia.",
-        "No aceptaron mi solicitud de cirugía, argumentando que ‘aún no cumplo el tiempo mínimo de afiliación’.",
+        "No aceptaron mi solicitud de cirugía, argumentando que aún no cumplo el tiempo mínimo de afiliación.",
         "Denegaron mis medicamentos para VIH por estar en los primeros meses de seguro.",
         "No cubrieron mi emergencia obstétrica, pese a ser un caso de vida o muerte.",
         "Rechazaron mi atención en periodo de latencia, aunque la ley establece excepciones."
@@ -145,8 +359,8 @@ templates = {
         "Mi seguro rechazó mi cobertura de emergencia durante el periodo de carencia.",
         "Mi solicitud de atención de emergencia fue rechazada por el periodo de carencia.",
         "No atendieron mi fractura grave en Emergencias por estar en periodo de carencia.",
-        "Se negaron a hospitalizarme por neumonía, alegando que mi seguro ‘aún no cubre’.",
-        "El médico de guardia rechazó derivarme a especialista por ‘falta de cobertura’.",
+        "Se negaron a hospitalizarme por neumonía, alegando que mi seguro aún no cubre.",
+        "El médico de guardia rechazó derivarme a especialista por falta de cobertura.",
         "No dieron prioridad a mi hijo en emergencia pediátrica por carencia de días.",
         "Me cobraron la atención de apendicitis aguda, pese a ser una urgencia vital."
     ],
@@ -168,7 +382,7 @@ templates = {
         "Mi solicitud para afiliarme al seguro fue denegada sin justificación.",
         "Me negaron la afiliación a pesar de tener todos los documentos en regla.",
         "No se me permitió afiliarme al seguro de salud.",
-        "Rechazaron mi afiliación porque ‘mi empleador no ha depositado’ (pese a que sí lo hizo).",
+        "Rechazaron mi afiliación porque mi empleador no ha depositado (pese a que sí lo hizo).",
         "No aceptaron mis documentos para afiliar a mi hijo recién nacido.",
         "Me exigen requisitos no establecidos en la ley para afiliarme.",
         "El sistema no registra mi afiliación, pese a tener constancia de aportes.",
@@ -184,7 +398,33 @@ templates = {
         "Perdí mi turno para actualizar mis datos porque el sistema se cayó.",
         "No me aceptaron el trámite de carné por falta de un sello en mi DNI.",
         "Me negaron la atención para registrar a mi cónyuge como beneficiario.",
-        "No hay personal disponible para resolver problemas de acreditación en mi sede."
+        "No hay personal disponible para resolver problemas de acreditación en mi sede.",
+        "El personal no quiso atenderme argumentando que ya era tarde, aunque llegué a tiempo.",
+        "Me pidieron documentos adicionales que no estaban especificados en los requisitos.",
+        "El sistema de citas no funciona y no pude obtener atención para mi trámite.",
+        "Me dijeron que no había sistema y que regresara otro día sin darme solución.",
+        "El personal me trató de manera grosera y no resolvió mi problema de registro.",
+        "Llevo semanas intentando realizar el trámite, pero siempre me dicen que vuelva después.",
+        "No hay información clara sobre los pasos a seguir para completar mi acreditación.",
+        "Me rechazaron el trámite porque supuestamente faltaba un documento, pero ya lo había entregado.",
+        "El horario de atención no se respeta y cierran antes de lo indicado.",
+        "No hay suficientes ventanillas abiertas para atender a todas las personas que necesitan el trámite.",
+        "El personal me indicó que debía realizar el trámite en otra sede, pero al llegar allá me dijeron que no era posible.",
+        "Después de esperar varias horas, me informaron que no podían atenderme porque el sistema estaba en mantenimiento.",
+        "Me solicitaron un documento que no estaba en la lista oficial de requisitos y no me dieron solución.",
+        "El personal no tiene conocimiento suficiente sobre los procedimientos y no pudieron ayudarme.",
+        "A pesar de haber llegado temprano, no me dieron turno porque supuestamente ya no había disponibilidad.",
+        "El sistema de registro en línea no funciona correctamente y no pude completar mi solicitud.",
+        "Me hicieron esperar todo el día solo para decirme que no podían atenderme por falta de personal.",
+        "El trato del personal fue muy descortés y no me ofrecieron ninguna alternativa para resolver mi problema.",
+        "Me dijeron que debía regresar otro día porque no había sistema, pero esto ya me ha pasado varias veces.",
+        "No hay un número de contacto claro para resolver dudas sobre el trámite, lo que complica todo el proceso.",
+        "El personal no respetó el orden de llegada y atendieron a otras personas que llegaron después de mí.",
+        "Me rechazaron el trámite porque supuestamente faltaba un sello, pero no me explicaron cómo obtenerlo.",
+        "El tiempo de espera es excesivo y no hay suficientes ventanillas para atender a todos los usuarios.",
+        "A pesar de cumplir con todos los requisitos, me dijeron que debía regresar con más documentos sin especificar cuáles.",
+        "El sistema de citas en línea no permite seleccionar fechas disponibles y no hay atención presencial sin cita.",
+        "El personal no me permitió realizar el trámite porque dijeron que ya era tarde, aunque aún faltaba tiempo para el cierre."
     ],
     "No cumplir con la disposición de libro de reclamaciones en salud": [
         "No se me permitió acceder al libro de reclamaciones para registrar mi queja.",
@@ -234,18 +474,36 @@ def generar_variaciones(texto):
 
 # Función para generar un texto sintético basado en la categoría
 def generar_texto_por_clasificador(clasificador):
-    if clasificador in templates:
+    # Si tiene clasificador, usar las plantillas existentes
+    if pd.notna(clasificador) and clasificador in templates:
         texto_base = random.choice(templates[clasificador])  # Selecciona un texto aleatorio
         return generar_variaciones(texto_base)  # Aplica variaciones
     else:
-        return fake.sentence()  # Genera un texto aleatorio si la categoría no está en el diccionario
+        # Para registros sin clasificador, generar texto más contextual en el 60% de los casos
+        if random.random() < 0.6:
+            # Seleccionar una categoría aleatoria para generar un texto contextual
+            categoria_aleatoria = random.choice(list(templates.keys()))
+            texto_base = random.choice(templates[categoria_aleatoria])
+            texto_variado = generar_variaciones(texto_base)
+            # Añadir una introducción para indicar que es un caso sin clasificación clara
+            introducciones = [
+                "Tengo un problema que no sé cómo clasificar exactamente. ",
+                "Quisiera reportar un inconveniente con el servicio. ",
+                "Necesito presentar un reclamo sobre lo siguiente: ",
+                "No estoy seguro de qué tipo de reclamo es este, pero: ",
+                "He tenido una experiencia negativa que describo a continuación: "
+            ]
+            return random.choice(introducciones) + texto_variado
+        else:
+            # Para el 40% restante, mantener el comportamiento original
+            return '-'
 
 # Crear la nueva columna con los textos generados
-df['DESCRIPCION'] = df['DE_CLASIF_1'].apply(generar_texto_por_clasificador)
+df['DESCRIPCION'] = df.apply(lambda row: generar_texto_por_clasificador(row['DE_CLASIF_1']), axis=1)
 
 # Guardar el nuevo DataFrame con las descripciones generadas
-output_path = "../data/processed/reclamos_descripciones.csv"
+output_path = "./data/processed/reclamos_descripcionesv2.csv"
 df.to_csv(output_path, index=False)
 
 print(f"Archivo guardado en {output_path}")
-print(df[['DE_CLASIF_1', 'DESCRIPCION']].head())  # Muestra ejemplos del resultado
+print(df[['DE_CLASIF_1', 'DESCRIPCION']].head(10))  # Muestra ejemplos del resultado, incluyendo algunos sin clasificación
